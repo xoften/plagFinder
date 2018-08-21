@@ -2,5 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deflated_files/A2 Tuesday 14-Alexander Bertilsson_4200194_assignsubmission_file_/ab224ax_st222ev_assign3/ab224ax_st222ev_assign3" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deflated_files/A2 Tuesday 14-Sebastian Thörngren_4200146_assignsubmission_file_/ab224ax_st222ev_assign3/ab224ax_st222ev_assign3" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deflated_files/A2 Wednesday 6-Charles André Claude Mairey_4199948_assignsubmission_file_/zk222ay-cm222pd-assign3" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deflated_files/A2 Wednesday 6-Zacky Kharboutli_4200023_assignsubmission_file_/zk222ay-cm222pd-assign3" vcs="Git" />
   </component>
 </project>
