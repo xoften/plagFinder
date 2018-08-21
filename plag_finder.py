@@ -11,7 +11,9 @@ def __main__():
     filename = input("Input absolute path of downloaded zip archive from moodle: ")
     print(filename)
     assignment_directory = decompress_files.decompress_one(filename, relative_dir)
-    decompress_files.decompress_assignments(assignment_directory)
 
+    decompress_files.decompress_assignments(assignment_directory)
+    print(assignment_directory)
+    run_jplag.run_jplag(assignment_directory)
 
 __main__()
