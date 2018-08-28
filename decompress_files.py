@@ -1,6 +1,7 @@
 import zipfile
 import os
 import shutil
+import rarfile
 
 #"F:\Downloads\18VT-1DV701-7,5hp-Växjö-50%-Assignment 3 TFTP Server-1755230.zip"
 
@@ -31,3 +32,11 @@ def decompress_assignments(assignment_directory):
                 with zipfile.ZipFile(file_path, "r") as zip_ref:
                     zip_ref.extractall(root)
                 os.remove(file_path)
+            elif file.endswith(".rar"):
+                file_path = os.path.join(root, file)
+                with rarfile.RarFile(file_path, "r") as rar_ref:
+                    rar_ref.extractall(root)
+                os.remove(file_path)
+            else:
+                file_extension = file.split(".")[1]
+                print("Unknown file found: ." + file_extension + " Could not uncompress")
