@@ -3,8 +3,6 @@ import os
 import shutil
 import rarfile
 
-#"F:\Downloads\18VT-1DV701-7,5hp-Växjö-50%-Assignment 3 TFTP Server-1755230.zip"
-
 def decompress_one(filename, root_directory):
 
     save_directory = root_directory + "\\deflated_files\\"
@@ -27,6 +25,7 @@ def decompress_assignments(assignment_directory):
             file_counter += 1
             os.system('cls' if os.name == 'nt' else 'clear')
             print(file_counter , " / ", max_files, " done!")
+            print(file)
             if file.endswith(".zip"):
                 file_path = os.path.join(root, file)
                 with zipfile.ZipFile(file_path, "r") as zip_ref:
