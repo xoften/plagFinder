@@ -1,1 +1,1 @@
-rarfile >= 3.0
+patool

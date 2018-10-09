@@ -1,7 +1,7 @@
 import zipfile
 import os
 import shutil
-import rarfile
+import patoolib
 
 def decompress_one(filename, root_directory):
 
@@ -18,6 +18,7 @@ def decompress_one(filename, root_directory):
     return save_directory
 
 def decompress_assignments(assignment_directory):
+    failed_counter = 0
     file_counter = 0
     max_files = len(os.listdir(assignment_directory))
     for root, dirs, files in os.walk(assignment_directory):
@@ -33,9 +34,15 @@ def decompress_assignments(assignment_directory):
                 os.remove(file_path)
             elif file.endswith(".rar"):
                 file_path = os.path.join(root, file)
-                with rarfile.RarFile(file_path, "r") as rar_ref:
-                    rar_ref.extractall(root)
+                patoolib.extract_archive(file_path, outdir=root)
+                os.remove(file_path)
+            elif file.endswith(".7z"):
+                file_path = os.path.join(root, file)
+                patoolib.extract_archive(file_path, outdir=root)
                 os.remove(file_path)
             else:
                 file_extension = file.split(".")[1]
+                failed_counter += 1
                 print("Unknown file found: ." + file_extension + " Could not uncompress")
+
+    return failed_counter

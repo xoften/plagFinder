@@ -1,6 +1,7 @@
 import os
 import decompress_files
 import run_jplag
+import time
 from tkinter import filedialog
 
 
@@ -15,9 +16,12 @@ def __main__():
     print(filename)
     assignment_directory = decompress_files.decompress_one(filename, relative_dir)
 
-    decompress_files.decompress_assignments(assignment_directory)
+    failed = decompress_files.decompress_assignments(assignment_directory)
     print(assignment_directory)
+    print(failed)
+    print("waiting 5 seconds")
+    time.sleep(5)
     run_jplag.run_jplag(assignment_directory)
-
+    time.sleep(10)
 
 __main__()
