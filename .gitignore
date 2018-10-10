@@ -1,6 +1,8 @@
 #Specific exceptions
 *deflated_files*
 .idea
+result/
+deflated_files/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
