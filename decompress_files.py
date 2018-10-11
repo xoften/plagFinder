@@ -9,21 +9,29 @@ def decompress_one(filename, root_directory):
     today = str(datetime.date.today())
 
     save_directory = os.path.join(root_directory, "deflated_files_" + today)
+
+    #Sees if the directory already exits and the deletes it to save room if we do alot of runs
     if os.path.exists(save_directory):
-        print(save_directory)
         shutil.rmtree(save_directory)
 
     os.makedirs(save_directory)
-    print(filename)
+
+    #Unzips the moodle file and returns the directory name as reference
     with zipfile.ZipFile(filename, "r") as zip_ref:
         zip_ref.extractall(save_directory)
 
     return save_directory
 
 def decompress_assignments(assignment_directory):
+
+    #Counts how many of the compressed files that are of unknown file type.
     failed_counter = 0
+
+    #Used as a counter
     file_counter = 0
     max_files = len(os.listdir(assignment_directory))
+
+    #Goes through all the directories and files extract every compressed encounter
     for root, dirs, files in os.walk(assignment_directory):
 
         for file in files:
@@ -49,7 +57,6 @@ def decompress_assignments(assignment_directory):
                 os.remove(file_path)
 
             else:
-                file_extension = file.split(".")[1]
                 failed_counter += 1
 
     return failed_counter
