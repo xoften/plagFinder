@@ -3,6 +3,7 @@ A python program to automate the plagiarism check for java code, expectes a zip 
 
 # HOW TO RUN
 Dependencies to download:
+* Java ( To run the Jplag.jar )
 * Python 3.x
 * Pip 3 (if not downloaded with the python 3.x)
 
